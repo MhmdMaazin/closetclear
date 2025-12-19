@@ -1,0 +1,7 @@
+{
+  "name": "ClosetClear AI",
+  "description": "An intelligent wardrobe management system that digitizes your closet, suggests outfits, and analyzes wardrobe utilization using Gemini AI.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
