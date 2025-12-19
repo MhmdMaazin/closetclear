@@ -1,8 +1,9 @@
 
 import React, { useState } from 'react';
 import { login, signup } from '../services/appwrite';
-import { Loader2, ArrowRight, Mail, Lock, User, Sparkles } from 'lucide-react';
+import { Loader2, ArrowRight, Mail, Lock, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Logo } from './Logo';
 
 interface AuthProps {
   onSuccess: () => void;
@@ -62,9 +63,9 @@ export const Auth: React.FC<AuthProps> = ({ onSuccess, initialMode = 'login' }) 
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white shadow-lg shadow-indigo-500/30"
+            className="flex justify-center mb-4"
           >
-            <Sparkles className="w-6 h-6" />
+            <Logo className="w-12 h-12" />
           </motion.div>
           
           <AnimatePresence mode="wait">
