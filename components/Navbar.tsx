@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { LayoutGrid, Shirt, PlusCircle, Sparkles, User, Plane, LogOut } from 'lucide-react';
+import { LayoutGrid, Shirt, PlusCircle, Sparkles, Plane, LogOut } from 'lucide-react';
+import { Logo } from './Logo';
 
 interface NavbarProps {
   currentView: string;
@@ -8,30 +9,6 @@ interface NavbarProps {
   userName?: string;
   onLogout: () => void;
 }
-
-const LogoIcon = ({ className = "w-8 h-8" }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
-    <path 
-      d="M15 7L21 12.5C21.6 13 21.6 14 21 14.5H16L12 18.5L8 14.5H3C2.4 14 2.4 13 3 12.5L9 7" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    />
-    <path 
-      d="M9 6C9 4.3 10.3 3 12 3C13.7 3 15 4.3 15 6V8" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    />
-    <path 
-      d="M19 2L19.6 3.8L21.4 4.4L19.6 5L19 6.8L18.4 5L16.6 4.4L18.4 3.8L19 2Z" 
-      fill="currentColor" 
-      stroke="none"
-    />
-  </svg>
-);
 
 export const Navbar: React.FC<NavbarProps> = ({ currentView, onChangeView, userName, onLogout }) => {
   const navItems = [
@@ -46,12 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onChangeView, userN
     <>
       {/* Mobile Top Header */}
       <div className="md:hidden fixed top-0 left-0 w-full h-14 bg-white/95 backdrop-blur-sm border-b border-slate-200 z-50 flex items-center justify-between px-4">
-        <div className="flex items-center gap-2">
-          <div className="text-indigo-600">
-            <LogoIcon className="w-6 h-6" />
-          </div>
-          <span className="text-lg font-bold text-slate-900 font-serif tracking-tight">ClosetClear</span>
-        </div>
+        <Logo showText={true} className="w-6 h-6" textClassName="text-base font-bold" />
         <button onClick={onLogout} className="p-2 text-slate-500 hover:bg-slate-100 rounded-full">
           <LogOut className="w-5 h-5" />
         </button>
@@ -61,11 +33,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onChangeView, userN
       <nav className="fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 z-50 md:relative md:border-t-0 md:w-64 md:h-screen md:flex md:flex-col md:border-r pb-safe">
         
         {/* Desktop Header/Logo */}
-        <div className="hidden md:flex items-center gap-2 mb-8 px-6 mt-6">
-          <div className="text-indigo-600">
-            <LogoIcon className="w-8 h-8" />
-          </div>
-          <span className="text-xl font-bold text-slate-900 tracking-tight font-serif">ClosetClear</span>
+        <div className="hidden md:flex mb-8 px-6 mt-6">
+          <Logo showText={true} className="w-8 h-8" textClassName="text-xl font-bold" />
         </div>
 
         {/* Nav Items Container */}
@@ -101,7 +70,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onChangeView, userN
             </div>
             <div className="flex flex-col text-left overflow-hidden">
               <span className="text-sm font-semibold text-slate-900 truncate">{userName || 'User'}</span>
-              <span className="text-xs text-slate-500">Free Plan</span>
             </div>
           </div>
           <button 

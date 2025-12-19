@@ -10,35 +10,12 @@ import {
   Layers, 
   Star
 } from 'lucide-react';
+import { Logo } from './Logo';
 
 interface LandingPageProps {
   onGetStarted: () => void;
   onLogin: () => void;
 }
-
-const LogoIcon = ({ className = "w-8 h-8" }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
-    <path 
-      d="M15 7L21 12.5C21.6 13 21.6 14 21 14.5H16L12 18.5L8 14.5H3C2.4 14 2.4 13 3 12.5L9 7" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    />
-    <path 
-      d="M9 6C9 4.3 10.3 3 12 3C13.7 3 15 4.3 15 6V8" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    />
-    <path 
-      d="M19 2L19.6 3.8L21.4 4.4L19.6 5L19 6.8L18.4 5L16.6 4.4L18.4 3.8L19 2Z" 
-      fill="currentColor" 
-      stroke="none"
-    />
-  </svg>
-);
 
 export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onLogin }) => {
   return (
@@ -51,10 +28,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onLogin 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
               className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
-              <div className="text-indigo-600">
-                <LogoIcon className="w-8 h-8" />
-              </div>
-              <span className="text-2xl font-bold tracking-tight text-slate-900 font-serif">ClosetClear</span>
+              <Logo showText={true} className="w-8 h-8" textClassName="text-2xl font-bold" />
             </button>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#how-it-works" className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">How it Works</a>
@@ -341,13 +315,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onLogin 
       <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="text-indigo-600">
-                <LogoIcon className="w-6 h-6" />
-              </div>
-              <span className="text-lg font-bold text-white">ClosetClear</span>
-            </div>
-            <p className="text-sm">The intelligent wardrobe management system for the modern era.</p>
+            <Logo showText={true} className="w-6 h-6" textClassName="text-lg font-bold text-white" />
+            <p className="text-sm mt-4">The intelligent wardrobe management system for the modern era.</p>
           </div>
           <div>
             <h4 className="text-white font-bold mb-4">Product</h4>
