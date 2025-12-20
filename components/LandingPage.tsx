@@ -365,7 +365,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onLogin 
             <Logo showText={true} className="w-6 h-6" textClassName="text-lg font-bold text-white" />
             <p className="text-sm mt-4">The intelligent wardrobe management system for the modern era.</p>
           </div>
-          <div>
+          {/* <div>
             <h4 className="text-white font-bold mb-4">Product</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="hover:text-white">Features</a></li>
@@ -386,10 +386,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onLogin 
               <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-white">Terms of Service</a></li>
             </ul>
-          </div>
+          </div> */}
         </div>
         <div className="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-slate-800 text-center text-xs">
-          © 2025 ClosetClear AI. All rights reserved.
+          © 2026 ClosetClear AI. Developed by <a href="https://maazin.vercel.app/" className="text-white">Maazin</a>.
         </div>
       </footer>
     </div>
